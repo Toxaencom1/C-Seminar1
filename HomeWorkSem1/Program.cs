@@ -17,6 +17,7 @@ else
 }
 */
 
+/*
 Console.WriteLine("Привет друг, эта программа покажет максимальное число из 3х чисел которые ты введешь");
 Console.WriteLine("Введи первое число");
 int a = Convert.ToInt32(Console.ReadLine());
@@ -45,3 +46,19 @@ else
     }
 }
 Console.WriteLine($"{max} - максимальное число");
+*/
+
+Console.WriteLine("Привет друг, эта программа покажет является ли число четным или нет");
+Console.WriteLine("Введи число");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Обрабатываю запрос ... ");
+int even = a%2;
+
+if(even == 0)
+{
+    Console.WriteLine("Ваше число ЧЁТНОЕ");
+}
+else
+{
+    Console.WriteLine("Ваше число НЕЧЁТНОЕ");    
+}
