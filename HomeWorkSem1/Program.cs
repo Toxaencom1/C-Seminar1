@@ -1,4 +1,6 @@
-﻿/*
+﻿// Серия задач из "Привет друг, эта программа... "
+
+/*
 Console.WriteLine("Привет друг, эта программа покажет какое число большее а какое меньшее");
 Console.WriteLine("Введи первое число");
 int a = Convert.ToInt32(Console.ReadLine());
@@ -48,6 +50,7 @@ else
 Console.WriteLine($"{max} - максимальное число");
 */
 
+/*
 Console.WriteLine("Привет друг, эта программа покажет является ли число четным или нет");
 Console.WriteLine("Введи число");
 int a = Convert.ToInt32(Console.ReadLine());
@@ -61,4 +64,43 @@ if(even == 0)
 else
 {
     Console.WriteLine("Ваше число НЕЧЁТНОЕ");    
+}
+
+*/
+
+
+Console.WriteLine("Привет друг, эта программа покажет все четные числа от единицы до введeнного тобой числа");
+Console.WriteLine("Введи число");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Обрабатываю запрос ... ");
+int numbers=1;
+int even=numbers%2;
+
+if(n>0)
+{
+    while(numbers<=n)
+    {
+        if(numbers%2 == 0)
+        {
+        Console.Write($"{numbers} ");
+        }
+    numbers++;
+    }
+}
+else
+{
+    while(numbers>=n)
+    {
+        if(numbers == 0)
+        {}
+        else
+        {
+            if(numbers%2 == 0)
+            {
+                Console.Write($"{numbers} ");
+            }
+        }
+        
+    numbers--;
+    }
 }
