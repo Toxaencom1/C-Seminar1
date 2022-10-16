@@ -81,10 +81,14 @@ Console.WriteLine("Привет друг, эта программа покаже
 Console.WriteLine("Введи число");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Обрабатываю запрос ... ");
+if(n==0 | n==1 | n==-1)
+{
+    Console.WriteLine("Вы ввели неправильное число");
+}
 int numbers=1;
 int even=numbers%2;
 
-if(n>0)
+if(n>1)
 {
     while(numbers<=n)
     {
