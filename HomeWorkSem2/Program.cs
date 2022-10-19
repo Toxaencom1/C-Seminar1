@@ -32,7 +32,7 @@ int ThirdNumber(int number)
     int res=0;
     while(index<7)
     {
-        if(number>100 && number<1000)
+        if(number>99 && number<1000)
         {
             res = number%10;
             break;
@@ -54,7 +54,7 @@ if(num<0)
     }
 if(num<100)
 {
-    Console.WriteLine("Число двузначное, третьей цифры нет!");        
+    Console.WriteLine("Задайте число больше, третьей цифры нет!");        
 }
 else
 {
