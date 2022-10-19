@@ -8,7 +8,7 @@ int SecondNumber(int number)
     return res;
 }
 
-Console.WriteLine("Введи трехзначное число");
+Console.WriteLine("Введите трехзначное число");
 int num = Convert.ToInt32(Console.ReadLine());
 if(num>=100 && num<1000)
 {
@@ -46,7 +46,7 @@ int ThirdNumber(int number)
     return res;
 }
 
-Console.WriteLine("Введи число:  P.S - не более 9 знаков ");
+Console.WriteLine("Введите число:  P.S - не более 9 знаков ");
 int num = Convert.ToInt32(Console.ReadLine());
 if(num<0)
     {
@@ -61,5 +61,42 @@ else
     
     int result = ThirdNumber(num);
     Console.WriteLine($"{result} - ваша третья цифра");    
+}
+*/
+
+/*
+// Задача №3.  Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+
+Console.WriteLine("Здравствуй пользователь, эта программа проверяет, является ли день выходным");
+
+bool Holiday(int day)
+{
+    if(day == 6 || day == 7)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+Console.WriteLine("Введите цифру сответсвтующию дню недели от 1 до 7 соотвественно");
+int days = Convert.ToInt32(Console.ReadLine());
+if(days<1 || days>7)
+{
+    Console.WriteLine("Вы ввели не верную цифру");   
+}
+else
+{
+    bool result = Holiday(days);
+    if(result == true)
+    {
+        Console.Write("Да");
+    }
+    else
+    {
+        Console.Write("Нет");
+    }
 }
 */
