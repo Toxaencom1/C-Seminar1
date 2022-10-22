@@ -48,4 +48,33 @@ else
 
 // Задача №2 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
+/*
+
+double RangeHipo3d(int coorX1, int coorY1, int coorZ1, int coorX2, int coorY2, int coorZ2)
+{
+    double AB = Math.Sqrt(Math.Pow((coorX2-coorX1), 2)+Math.Pow((coorY2-coorY1), 2)+Math.Pow((coorZ2-coorZ1), 2));
+    return AB;
+}
+
+Console.WriteLine("Введите 3D кординаты для точки A и для точки B:");
+Console.Write("Введите X1 для точки A ");
+int coorX1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите Y1 для точки A ");
+int coorY1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите Z1 для точки A ");
+int coorZ1 = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите X2 для точки B ");
+int coorX2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите Y2 для точки B ");
+int coorY2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите Z2 для точки B ");
+int coorZ2 = Convert.ToInt32(Console.ReadLine());
+
+double res = Math.Round(RangeHipo3d(coorX1, coorY1, coorZ1, coorX2, coorY2, coorZ2), 3);
+Console.WriteLine($"Отрезок равен - {res} ");
+
+*/
+
+
 // Задача №3 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
