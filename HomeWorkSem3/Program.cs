@@ -65,12 +65,14 @@ int coorY1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите Z1 для точки A ");
 int coorZ1 = Convert.ToInt32(Console.ReadLine());
 
+
 Console.Write("Введите X2 для точки B ");
 int coorX2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите Y2 для точки B ");
 int coorY2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите Z2 для точки B ");
 int coorZ2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"A({coorX1},{coorY1},{coorZ1})    B({coorX2},{coorY2},{coorZ2})");
 
 double res = Math.Round(RangeHipo3d(coorX1, coorY1, coorZ1, coorX2, coorY2, coorZ2), 3);
 Console.WriteLine($"Отрезок равен - {res} ");
