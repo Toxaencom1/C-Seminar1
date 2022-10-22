@@ -78,3 +78,30 @@ Console.WriteLine($"Отрезок равен - {res} ");
 
 
 // Задача №3 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+/*
+void CubeLine(int num)
+{
+    double i= 1;
+    double cube = 1;
+    while(i<=num)
+    {
+       cube = Math.Pow(i,3);
+       Console.Write($"{cube} ");
+       i++;
+    }
+}
+
+Console.Write("Введите число от 1 до N <до которого будут отображаться последовательно кубы чисел>: ");
+int numCube = Convert.ToInt32(Console.ReadLine());
+if(numCube<0)
+{
+    numCube=(-1)*numCube;
+}
+if(numCube == 0)
+{
+    Console.WriteLine("Число не правильное");
+}
+CubeLine(numCube);
+
+*/
