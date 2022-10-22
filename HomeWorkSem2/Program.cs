@@ -32,7 +32,7 @@ int ThirdNumber(int number)
     int res=0;
     while(index<7)
     {
-        if(number>100 && number<1000)
+        if(number>99 && number<1000)
         {
             res = number%10;
             break;
