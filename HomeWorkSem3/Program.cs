@@ -1,4 +1,4 @@
-﻿// Задача №1 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом. 12321
+﻿// Задача №1 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
 /*
 
@@ -22,13 +22,13 @@ bool Polindrome(int number)
     
 }
 Console.WriteLine("Здравствуй пользователь, эта программа проверяет является ли введенное тобой число полиндромом");
-Console.Write("Ввдеди пятизначное число: ");
+Console.Write("Введите пятизначное число: ");
 int number5 = Convert.ToInt32(Console.ReadLine());
 if(number5<0)
 {
     number5=(-1)*number5;
 }
-if(number5>1 && number5<100000)
+if(number5>9999 && number5<100000)
 {
     if(Polindrome(number5) == true)
     {
@@ -56,6 +56,7 @@ double RangeHipo3d(int coorX1, int coorY1, int coorZ1, int coorX2, int coorY2, i
     return AB;
 }
 
+Console.WriteLine("Здравствуй пользователь, эта программа находит расстояние между точками в 3d пространстве");
 Console.WriteLine("Введите 3D кординаты для точки A и для точки B:");
 Console.Write("Введите X1 для точки A ");
 int coorX1 = Convert.ToInt32(Console.ReadLine());
@@ -92,6 +93,7 @@ void CubeLine(int num)
     }
 }
 
+Console.WriteLine("Здравствуй пользователь, эта программа возводит числа в куб");
 Console.Write("Введите число от 1 до N <до которого будут отображаться последовательно кубы чисел>: ");
 int numCube = Convert.ToInt32(Console.ReadLine());
 if(numCube<0)
