@@ -3,23 +3,42 @@
 /*
 int SquareNumber(int aNum, int bNum)
 {
-    int count = 1;
-    int square = bNum;
     int result = aNum;
-    while(count<square)
+    for (int count = 1;count < bNum; count++)  
     {
         result *= aNum;
-        count ++;
     }
     return result;
 }
 
-Console.WriteLine("Привет пользователь, эта программа возводит число А в число В: Введи число А");
+Console.WriteLine("Привет пользователь, эта программа возводит число А в число В: Введите число А");
 int a = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введи число В: ");
 int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"А в степени В равна: {SquareNumber(a,b)}");
+
+if(a==0 & b ==0)
+{
+    Console.WriteLine("Задача с такими параметрами не имеет смысла (((");
+}
+else
+{
+    if(b<0)
+    {
+        b= b*(-1);
+    }
+
+    if(b == 0)
+    {
+        Console.WriteLine($"{a} в степени {b} равно: 1 ");
+    }
+    else
+    {
+        Console.WriteLine($"{a} в степени {b} равно: {SquareNumber(a,b)}");
+    }
+}
 */
+
+
 
 // Задача №2. Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе. 
 
