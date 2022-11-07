@@ -78,3 +78,69 @@ Console.WriteLine($"Сумма знаков вашего числа равна: 
 
 
 // Задача №3. Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+
+/*
+void ArrayOutput(int[] array)
+{
+    Console.Write("[");
+    for (int j = 0; j < array.Length; j++)
+    {
+        if(j == (array.Length-1))
+        {
+            Console.Write($"{array[j]}");   
+        }
+        else
+        {
+            Console.Write($"{array[j]}, ");    
+        }
+    }
+    Console.Write("]");
+}
+
+int[] ArrayRandomInput(int[] myArray)
+{
+    for (int k = 0; k < myArray.Length; k++)
+        {
+            myArray[k] = new Random().Next(1,100);
+        }
+    return myArray;
+}    
+
+Console.WriteLine("Привет пользователь, эта программа показывает методы ввода массива и его вывод");
+Console.WriteLine("Первый метод ввода - ввод с клавиатуры");
+Console.WriteLine("Введите 8 элементов массива по очереди: ");
+int[] array  = new int[8];  
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine($"Введите {(i+1)}й элемент массива");
+    array[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+Console.WriteLine();
+ArrayOutput(array);
+Console.WriteLine("\n");
+
+
+Console.WriteLine("А еще можно заполнять массивы случайными числами например от 1го до 100");
+Console.WriteLine("Введите число случайных массивов для демонстрации");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Вот например: {n} массивов заполненых случайными числами" + "\n");
+
+int[] myArray  = new int[8];
+int count = 0;
+while(count < n)
+{
+    ArrayRandomInput(myArray);
+    ArrayOutput(myArray);
+    Console.WriteLine("\n");
+    count++;
+}
+
+Console.WriteLine("\n");
+*/
+
+
+
+
+
+
