@@ -2,7 +2,7 @@
 // которая покажет количество чётных чисел в массиве.
 
 
-
+/*
 void ArrayOutput(int[] array) // Общий метод для первой и второй задачи!!! Как я понял перегруз методов делается в классе, с этим я не знаком, поэтому получилось неудобно
 {
     Console.Write("[");
@@ -19,7 +19,7 @@ void ArrayOutput(int[] array) // Общий метод для первой и в
     }
     Console.WriteLine("]");
 }
-
+*/
 
 /*
 int[] ArrayPosRandomInput100Till1000(int length)
@@ -152,7 +152,7 @@ void ArrayOutputDouble(double[] array)
     Console.WriteLine("]");
 }
 
-Console.WriteLine("Привет пользователь, эта программа считает разницу случайных вещественных значений,\n между минималным и максимальным значнением  массива");
+Console.WriteLine("Привет пользователь, эта программа считает разницу случайных вещественных значений,\nмежду минималным и максимальным значнением  массива");
 Console.WriteLine("Введите размер массива: ");
 int length = Convert.ToInt32(Console.ReadLine());
 
@@ -162,4 +162,4 @@ if(length<0)
 double[] myArray = ArrayDoubleRandomInput(length);
 ArrayOutputDouble(myArray);
 
-Console.WriteLine($"Разница между минимальным и максимальным равна: {MaxMinDiff(myArray)}");
+Console.WriteLine($"Разница между минимальным и максимальным равна: {Math.Round(MaxMinDiff(myArray),2)}");
