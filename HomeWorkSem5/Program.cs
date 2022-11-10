@@ -2,7 +2,8 @@
 // которая покажет количество чётных чисел в массиве.
 
 
-void ArrayOutput(int[] array)
+
+void ArrayOutput(int[] array) // Общий метод для первой и второй задачи!!! Как я понял перегруз методов делается в классе, с этим я не знаком, поэтому получилось неудобно
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
@@ -101,4 +102,64 @@ Console.WriteLine($"Сумма элементов массива на нечет
 
 // Задача №3. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
+double[] ArrayDoubleRandomInput(int length)
+{
+    double[] array = new double[length];
+    for (int i = 0; i < length; i++)
+        {
+            
+            array[i] = new Random().Next(-100,100);
+            array[i] += new Random().NextDouble();
+            array[i] = Math.Round(array[i], 2);
+        }
+    return array;
+}    
 
+
+double MaxMinDiff(double[] array)
+{
+    double minValue = array[0];
+    double maxValue = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if(array[i] < minValue)
+        {
+            minValue = array[i];
+        }
+        if(array[i] > maxValue)
+        {
+            maxValue = array[i];
+        }
+    }
+    double result = maxValue - minValue;
+    return result; 
+}
+
+void ArrayOutputDouble(double[] array) 
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(i == (array.Length-1))
+        {
+            Console.Write($"{array[i]}");   
+        }
+        else
+        {
+            Console.Write($"{array[i]} ; ");    
+        }
+    }
+    Console.WriteLine("]");
+}
+
+Console.WriteLine("Привет пользователь, эта программа считает разницу случайных вещественных значений,\n между минималным и максимальным значнением  массива");
+Console.WriteLine("Введите размер массива: ");
+int length = Convert.ToInt32(Console.ReadLine());
+
+if(length<0)
+    length = length * (-1);
+
+double[] myArray = ArrayDoubleRandomInput(length);
+ArrayOutputDouble(myArray);
+
+Console.WriteLine($"Разница между минимальным и максимальным равна: {MaxMinDiff(myArray)}");
