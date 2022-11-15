@@ -2,6 +2,25 @@
 
 // Задача №1. Вариант №1. Без массива (С помощью клавиш, бесконечный ввод от пользователя)
 
+
+/*                                                              
+//                                                             Этот метот общий для 2х вариантов первой задачи
+void CheckNumberCountForOutput(int ruCount)
+{    
+    if(ruCount == 1 || (ruCount/10 >= 2 & ruCount%10 == 1))
+        Console.WriteLine($"Вы ввели <{ruCount}> число больше 0");
+    else if(ruCount == 2 || (ruCount/10 >= 2 & ruCount%10 == 2))
+        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
+    else if(ruCount == 3 || (ruCount/10 >= 2 & ruCount%10 == 3))
+        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
+    else if(ruCount == 4 || (ruCount/10 >= 2 & ruCount%10 == 4))
+        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
+    else
+        Console.WriteLine($"Вы ввели <{ruCount}> чисел больше 0");
+}
+*/
+
+
 /*
 int CheckNumberForCount(int num, bool parseResult)
 {    
@@ -18,20 +37,6 @@ int CheckNumberForCount(int num, bool parseResult)
         Console.WriteLine("Число неверное, введите снова");        
         return 0;                   
     }    
-}
-
-void CheckNumberCountForOutput(int ruCount)
-{    
-    if(ruCount == 1 || (ruCount/10 >= 2 & ruCount%10 == 1))
-        Console.WriteLine($"Вы ввели <{ruCount}> число больше 0");
-    else if(ruCount == 2 || (ruCount/10 >= 2 & ruCount%10 == 2))
-        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
-    else if(ruCount == 3 || (ruCount/10 >= 2 & ruCount%10 == 3))
-        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
-    else if(ruCount == 4 || (ruCount/10 >= 2 & ruCount%10 == 4))
-        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
-    else
-        Console.WriteLine($"Вы ввели <{ruCount}> чисел больше 0");
 }
 
 Console.WriteLine("Здравствуй пользователь, эта программа считает сколько чисел больше 0 вы ввели");
@@ -109,10 +114,7 @@ for (int i = 0; i < myArray.Length; i++)
     if(myArray[i]>0)    
         count ++;    
 }
-if(count < 5)            
-    Console.Write($"Вы ввели <{count}> числа больше 0\n"); 
-else
-    Console.Write($"Вы ввели <{count}> чисел больше 0\n"); 
+CheckNumberCountForOutput(count);
 */
 
 // Задача №2. Напишите программу, которая найдёт точку пересечения двух прямых,
