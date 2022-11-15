@@ -3,9 +3,9 @@
 // Задача №1. Вариант №1. Без массива (С помощью клавиш, бесконечный ввод от пользователя)
 
 /*
-int CheckNumberForCount(int num, bool res)
+int CheckNumberForCount(int num, bool parseResult)
 {    
-    if(res)
+    if(parseResult)
     {
         Console.WriteLine("Число корректное, продолжайте...");
         if(num>0)            
@@ -20,14 +20,29 @@ int CheckNumberForCount(int num, bool res)
     }    
 }
 
+void CheckNumberCountForOutput(int ruCount)
+{    
+    if(ruCount == 1 || (ruCount/10 >= 2 & ruCount%10 == 1))
+        Console.WriteLine($"Вы ввели <{ruCount}> число больше 0");
+    else if(ruCount == 2 || (ruCount/10 >= 2 & ruCount%10 == 2))
+        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
+    else if(ruCount == 3 || (ruCount/10 >= 2 & ruCount%10 == 3))
+        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
+    else if(ruCount == 4 || (ruCount/10 >= 2 & ruCount%10 == 4))
+        Console.WriteLine($"Вы ввели <{ruCount}> числа больше 0");
+    else
+        Console.WriteLine($"Вы ввели <{ruCount}> чисел больше 0");
+}
+
 Console.WriteLine("Здравствуй пользователь, эта программа считает сколько чисел больше 0 вы ввели");
+
+int count = 0;
 
 ConsoleKeyInfo keyPress = new ConsoleKeyInfo();
 
-int count = 0;
 do 
 {
-    Console.WriteLine("\nНажмите <Enter> чтобы ввести число; Нажмите клавишу <ESC> закончить вводить числа.");
+    Console.WriteLine("\nНажмите <Enter> чтобы ввести число или Нажмите клавишу <ESC> чтобы закончить вводить числа.");
     
     while (Console.KeyAvailable == false)
         Thread.Sleep(250); 
@@ -39,19 +54,16 @@ do
         int numbers;        
         bool result = int.TryParse(Console.ReadLine(), out numbers);
         count = count + CheckNumberForCount(numbers, result);
-        if(count < 5)            
-            Console.Write($"Вы ввели <{count}> числа больше 0\n"); 
-        else
-            Console.Write($"Вы ввели <{count}> чисел больше 0\n");        
+        CheckNumberCountForOutput(count);
     }
     else if(keyPress.Key == ConsoleKey.Escape)
-        Console.Write($"Вы нажали клавишу '{keyPress.Key}', Вы закончили вводить числа");    
+        Console.Write($"Вы нажали клавишу '{keyPress.Key}', Вы закончили вводить числа\n");    
     else    
         Console.WriteLine("Пожалуйста, Нажмите только <Enter> для ввода или <Esc> для завершения");
     
 } while(keyPress.Key != ConsoleKey.Escape);
 
-Console.WriteLine($"\nВы ввели <{count}> числа больше 0");
+CheckNumberCountForOutput(count);
 */
 
 //-------------------------------------------------------------------------------------------------
