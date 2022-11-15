@@ -1,13 +1,13 @@
 ﻿// Задача №1. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь. 
 
-// Задача №1. Вариант №1. Без массива
+// Задача №1. Вариант №1. Без массива (С помощью клавиш, бесконечный ввод от пользователя)
 
 /*
 int CheckNumberForCount(int num, bool res)
 {    
     if(res)
     {
-        Console.WriteLine("Число корректное продолжайте...");
+        Console.WriteLine("Число корректное, продолжайте...");
         if(num>0)            
             return 1;
         else       
@@ -15,7 +15,7 @@ int CheckNumberForCount(int num, bool res)
     }
     else
     {        
-        Console.WriteLine("Число неверное введите снова");        
+        Console.WriteLine("Число неверное, введите снова");        
         return 0;                   
     }    
 }
@@ -52,9 +52,9 @@ do
 } while(keyPress.Key != ConsoleKey.Escape);
 
 Console.WriteLine($"\nВы ввели <{count}> числа больше 0");
-
 */
 
+//-------------------------------------------------------------------------------------------------
 // Задача №1. Вариант №2. С массивом
 
 /*
@@ -105,3 +105,29 @@ else
 
 // Задача №2. Напишите программу, которая найдёт точку пересечения двух прямых,
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+
+Console.WriteLine("Здравствуй пользователь, эта программа Находит точку пересечения двух прямых заданных уравнениями");
+Console.WriteLine("y = k1 * x + b1, y = k2 * x + b2");
+
+Console.Write("Введите значение k1: ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите значение b1: ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите значение k2: ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите значение b2: ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+
+if(k1 == k2 && b1 == b2)
+    Console.WriteLine("Линии совпадают");
+else if(k1 == k2)
+    Console.WriteLine("Линии параллельны");
+else
+{
+    double x = Math.Round((b2-b1)/(k1-k2), 3);
+    double y = Math.Round(k1*((b2-b1)/(k1-k2))+b1, 3);
+    Console.WriteLine($"Точка пересечения прямых - [{x};{y}]");
+}
