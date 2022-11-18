@@ -93,7 +93,7 @@ Console.Write("Задайте столбец элемента массива : "
 int column = Convert.ToInt32(Console.ReadLine());
 
 
-int[,] myArray = GenerateRandom2dArray(new Random().Next(1, 15), new Random().Next(1, 15), -100, 100);
+int[,] myArray = GenerateRandom2dArray(new Random().Next(2, 15), new Random().Next(2, 15), -100, 100);
 Console.WriteLine();
 Output2dArray(myArray);
 Console.WriteLine();
