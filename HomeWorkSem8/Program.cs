@@ -63,19 +63,66 @@ Output2dArray(myArray);
 */
 
 // Задача №2. Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
 /*
-    Например, задан массив:
+int MinSumRow(int[,] array) // Основной метод для решения задачи
+{
+    int sum = 0;
+    int[] massive = new int[array.GetLength(0)];
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+            sum += array[i, j];
+        massive[i] = sum;
+        sum = 0;
+    }
+    int minInRowsValue = massive[0];
+    int minInRowsIndex = 0;
+    for (int i = 0; i < massive.Length; i++)
+    {
+        if (massive[i] < minInRowsValue )
+        {
+            minInRowsValue = massive[i];            
+            minInRowsIndex = i;
+        }
+    }
+    ArrayOutput(massive);
+    return minInRowsIndex+1;
+}
 
-    1 4 7 2
 
-    5 9 2 3
+void ArrayOutput(int[] array) // вывести одномерный массив
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+        if (i == (array.Length - 1))
+            Console.Write($"{array[i]}");
+        else
+            Console.Write($"{array[i]}\t");
+    Console.WriteLine("]");
+}
 
-    8 4 2 4
+Console.Write("Введите количество строк: ");
+int m = Convert.ToInt32(Console.ReadLine());
 
-    5 2 6 7
+Console.Write("Введите количество столбцов: ");
+int n = Convert.ToInt32(Console.ReadLine());
 
-    Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+Console.Write("Введите размерность элементов ОТ: ");
+int min = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите размерность элементов ДО: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] myArray = GenerateRandom2dArray(m, n, min, max);
+
+Output2dArray(myArray);
+Console.WriteLine();
+
+
+Console.WriteLine($"<{MinSumRow(myArray)}я> - строка имеет минимальное значение её суммы");
 */
+
 
 // Задача №3. Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 /*    
