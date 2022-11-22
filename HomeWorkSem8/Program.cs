@@ -1,4 +1,5 @@
-﻿// Задача №1. Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+﻿// Семинар №8, ДЗ
+// Задача №1. Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
 int[,] GenerateRandom2dArray(int rows, int columns, int minValue, int maxValue) // Заполнить двумерный массив
 {
@@ -189,7 +190,7 @@ Output2dArray(MatrixMultiply(myArrayK, myArrayL));
 
 Console.Clear();
 
-int[,,] GenerateRandom3dArray(int page, int rows, int columns, int minValue, int maxValue) // Заполнить трехмерный массив
+int[,,] GenerateUniqValueRandom3dArray(int page, int rows, int columns, int minValue, int maxValue) // Заполнить трехмерный массив
 {
     int[,,] array = new int[page, rows, columns];
     int[] arrayFill = new int[array.Length];
@@ -238,7 +239,7 @@ void Output3dArray(int[,,] array)                              // Вывести
         {
             Console.Write("[ ");
             for (int k = 0; k < array.GetLength(2); k++)
-        /   {
+            {
                 Console.Write($"{array[i, j, k]}({i},{j},{k})\t");
             }
             Console.WriteLine(" ]");
@@ -258,7 +259,7 @@ int n = Convert.ToInt32(Console.ReadLine());
 
 if(!(l*m*n>90))
 {
-    int[,,] MyFirst3dAraay = GenerateRandom3dArray(l, m, n, 10, 99);    
+    int[,,] MyFirst3dAraay = GenerateUniqValueRandom3dArray(l, m, n, 10, 99);    
     Output3dArray(MyFirst3dAraay);
 }
 else
