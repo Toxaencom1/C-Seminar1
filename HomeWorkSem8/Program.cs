@@ -22,7 +22,22 @@ void Output2dArray(int[,] array)                              // Вывести 
     }
 }
 
+void ArrayOutput(int[] array) // вывести одномерный массив
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+        if (i == (array.Length - 1))
+            Console.Write($"{array[i]}");
+        else
+            Console.Write($"{array[i]}  ");
+    Console.WriteLine("]");
+}
+
+
 /*
+
+Console.Clear();
+
 void SortRowsOfMassive(int[,] array)             // Основной метод решения задачи
 {    
     for (int i = 0; i < array.GetLength(0); i++)
@@ -41,6 +56,8 @@ void SortRowsOfMassive(int[,] array)             // Основной метод 
         }
     }
 }
+
+Console.WriteLine("Здравствуй пользователь, эта программа которая упорядочит по убыванию элементы каждой строки двумерного массива");
 
 Console.Write("Введите количество строк: ");
 int m = Convert.ToInt32(Console.ReadLine());
@@ -65,42 +82,34 @@ Output2dArray(myArray);
 // Задача №2. Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 /*
-int MinSumRow(int[,] array) // Основной метод для решения задачи  // ДОРАБОТАТЬ (сократить помещение в массив)
+
+Console.Clear();
+
+int MinSumRow(int[,] array) // Основной метод для решения задачи  
 {
-    int sum = 0;
-    int[] massive = new int[array.GetLength(0)];
+    int sum = 0;    
+    int minSum = 0;
+    int minSumFirst = 0;
+    int minIndex = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
-            sum += array[i, j];
-        massive[i] = sum;
+        for (int j = 0; j < array.GetLength(1); j++)        
+            sum += array[i, j];               
+        minSumFirst = sum;
+        if (i == 0)
+            minSum = minSumFirst;
+        if (sum < minSum)
+        {
+            minSum = sum;
+            minIndex = i;
+        }
         sum = 0;
     }
-    int minInRowsValue = massive[0];
-    int minInRowsIndex = 0;
-    for (int i = 0; i < massive.Length; i++)
-    {
-        if (massive[i] < minInRowsValue )
-        {
-            minInRowsValue = massive[i];            
-            minInRowsIndex = i;
-        }
-    }
-    ArrayOutput(massive);
-    return minInRowsIndex+1;
+    return minIndex + 1;
 }
 
 
-void ArrayOutput(int[] array) // вывести одномерный массив
-{
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
-        if (i == (array.Length - 1))
-            Console.Write($"{array[i]}");
-        else
-            Console.Write($"{array[i]}\t");
-    Console.WriteLine("]");
-}
+Console.WriteLine("Здравствуй пользователь, эта программа которая будет находить строку с наименьшей суммой элементов");
 
 Console.Write("Введите количество строк: ");
 int m = Convert.ToInt32(Console.ReadLine());
@@ -120,12 +129,15 @@ Output2dArray(myArray);
 Console.WriteLine();
 
 
-Console.WriteLine($"<{MinSumRow(myArray)}я> - строка имеет минимальное значение её суммы");
+Console.WriteLine($"<{MinSumRow(myArray)}я> - строка имеет минимальное значение суммы её элементов");
 */
 
 
 // Задача №3. Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+
 /*
+Console.Clear();
+
 int[,] MatrixMultiply(int[,] arrayK, int[,] arrayL)
 {
     int[,] arrayKL = new int[arrayK.GetLength(0), arrayL.GetLength(1)];
@@ -142,10 +154,10 @@ int[,] MatrixMultiply(int[,] arrayK, int[,] arrayL)
             }
         }
     }
-    else Console.WriteLine("Умножение невозможно");
+    else Console.WriteLine("Умножение невозможно, нужно чтобы количество столбцов первой матрицы совпадало с количеством строк другой");
     return arrayKL;
 }
-
+Console.WriteLine("Здравствуй пользователь, эта программа которая будет находить произведение двух матриц");
 
 Console.Write("Введите количество строк для матрицы K: ");
 int m1 = Convert.ToInt32(Console.ReadLine());
@@ -173,13 +185,88 @@ Output2dArray(MatrixMultiply(myArrayK, myArrayL));
 // Задача №4. Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив,
 // добавляя индексы каждого элемента.
 
-/*    
-    Массив размером 2 x 2 x 2
-    66(0,0,0) 25(0,1,0)
-    34(1,0,0) 41(1,1,0)
-    27(0,0,1) 90(0,1,1)
-    26(1,0,1) 55(1,1,1)
+/*
+
+Console.Clear();
+
+int[,,] GenerateRandom3dArray(int page, int rows, int columns, int minValue, int maxValue) // Заполнить трехмерный массив
+{
+    int[,,] array = new int[page, rows, columns];
+    int[] arrayFill = new int[array.Length];
+    
+    bool isUniq;
+    arrayFill[0] = new Random().Next(10, 100);
+    for (int i = 1; i < arrayFill.Length; i++)
+    {
+        arrayFill[i] = new Random().Next(10,100);
+        for (int j = i; j >= 1; j--)
+        {
+            do
+            {                
+                if(arrayFill[i-j]==arrayFill[i] )
+                {
+                    isUniq = false;
+                    j = i;
+                    arrayFill[i] = new Random().Next(10,100);
+                }
+                else
+                {
+                    isUniq = true;
+                }
+            } while (!isUniq);
+        }        
+    }
+    for (int i = 0, l =0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++,l++)
+            {
+                array[i,j,k] = arrayFill[l];
+            }
+        }
+    }    
+    return array;
+}
+
+void Output3dArray(int[,,] array)                              // Вывести трехмерный массив
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.WriteLine($"Страница {i + 1}");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write("[ ");
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i, j, k]}({i},{j},{k})\t");
+            }
+            Console.WriteLine(" ]");
+        }
+    }
+}
+Console.WriteLine("Здравствуй пользователь, эта программа формирует трёхмерный массив из неповторяющихся двузначных чисел");
+
+Console.Write("Введите количество страниц: ");
+int l = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите количество строк: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите количество столбцов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+if(!(l*m*n>90))
+{
+    int[,,] MyFirst3dAraay = GenerateRandom3dArray(l, m, n, 10, 99);    
+    Output3dArray(MyFirst3dAraay);
+}
+else
+{
+ Console.WriteLine("Уникальных двухзначных чисел недостаточно, чтобы заполнить массив таких размеров");
+}
 */
+
 
 // Задача №5. Напишите программу, которая заполнит спирально массив 4 на 4.
 /*    
