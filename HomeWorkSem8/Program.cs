@@ -238,7 +238,7 @@ void Output3dArray(int[,,] array)                              // Вывести
         {
             Console.Write("[ ");
             for (int k = 0; k < array.GetLength(2); k++)
-            {
+        /   {
                 Console.Write($"{array[i, j, k]}({i},{j},{k})\t");
             }
             Console.WriteLine(" ]");
@@ -269,10 +269,68 @@ else
 
 
 // Задача №5. Напишите программу, которая заполнит спирально массив 4 на 4.
-/*    
-    Например, на выходе получается вот такой массив:
-    01 02 03 04
-    12 13 14 05
-    11 16 15 06
-    10 09 08 07
+
+/*
+Console.Clear();
+
+int[,] GenerateCount2dArrayHelix(int rows, int columns) // Заполнить двумерный массив последовательными числами по спирали
+{
+    int count = 1;
+    int[,] array = new int[rows, columns];
+
+    for (int l = 0; l < array.GetLength(0) / 2 && l < array.GetLength(1) / 2; l++)
+    {
+        for (int i = 0 + l; i < 1 + l; i++)
+            for (int j = 0 + l; j < array.GetLength(1) - l; j++, count++)  //вправо
+                array[i, j] = count;
+
+        for (int i = 0 + 1 + l; i < array.GetLength(0) - l; i++)
+            for (int j = array.GetLength(1) - 1 - l; j <= array.GetLength(1) - 1 - l; j++, count++) //Вниз
+                array[i, j] = count;
+
+        for (int i = array.GetLength(0) - 1 - l; i <= array.GetLength(0) - 1 - l; i++) //влево
+            for (int j = array.GetLength(1) - 1 - 1 - l; j >= 0 + l; j--, count++)
+                array[i, j] = count;
+
+        for (int i = array.GetLength(0) - 1 - 1 - l; i >= 0 + 1 + l; i--) // вверх
+            for (int j = 0 + l; j < 1 + l; j++, count++)
+                array[i, j] = count;
+    }
+    
+    if (array.GetLength(0) < array.GetLength(1) && array.GetLength(0) % 2 != 0 || array.GetLength(0) == array.GetLength(1)) // Заполняю пустоты неравномерности 2d массива
+    {
+        int k = array.GetLength(0) / 2;
+        for (int i = 0 + k; i < 1 + k; i++)
+            for (int j = 0 + k; j < array.GetLength(1) - k; j++, count++) 
+                array[i, j] = count;
+    }
+    else if (array.GetLength(0) > array.GetLength(1) && array.GetLength(0) % 2 != 0 &&
+             array.GetLength(0) > array.GetLength(1) && array.GetLength(1) % 2 != 0 ||
+             array.GetLength(0) > array.GetLength(1) && array.GetLength(1) % 2 != 0   )
+    {
+        int m = array.GetLength(1) / 2;
+        for (int i = m; i < array.GetLength(0) - m; i++)
+            for (int j = array.GetLength(1) - 1 - m; j <= array.GetLength(1) - 1 - m; j++, count++)
+                array[i, j] = count;
+    }      
+    return array;
+}
+
+Console.WriteLine("Здравствуй пользователь, эта программа которая заполнит массив 'M на N' по спирали");
+Console.WriteLine("Рекомендуемо от 2х строк и стобцов, до 10 строк и 15 столбцов");
+
+Console.Write("Введите количество строк M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+if(m<0)
+    m*=(-1);
+
+Console.Write("Введите количество столбцов N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+if(n<0)
+    n*=(-1);
+
+int[,] myArray = GenerateCount2dArrayHelix(m, n);
+Output2dArray(myArray);
 */
+
+
