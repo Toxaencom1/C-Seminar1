@@ -17,18 +17,18 @@ ShowNumbers(n);
 
 // Задача №2. Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 
-/*
+
 Console.Clear();
 
 Console.WriteLine("Здравствуй пользователь, эта программа которая найдёт сумму натуральных элементов в промежутке от M до N с помощью рекурсии!");
-int SummN(int m, int n)
+int SumOfNaturalElements(int m, int n)
 {
     if (m == n)
         return n;
     else if (m > n)    
-        return SummN(m - 1, n) + m;
+        return SumOfNaturalElements(m - 1, n) + m;
     else 
-        return SummN(m, n - 1) + n;
+        return SumOfNaturalElements(m, n - 1) + n;
 }
 
 Console.WriteLine("Введите M");
@@ -37,9 +37,9 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите N");
 int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"Сумма натуральных чисел равна: {SummN(m, n)}");
+Console.WriteLine($"Сумма натуральных чисел равна: {SumOfNaturalElements(m, n)}");
 
-*/
+
 
 // Задача №3. Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 
